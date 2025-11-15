@@ -1,122 +1,118 @@
-💳 Credit Card Fraud Detection Dashboard
+# 🛒 Customer Review Sentiment Analyzer (NLP Project)
 
-An end-to-end machine learning project to detect fraudulent credit card transactions.
-This dashboard provides EDA, feature engineering, model training, SMOTE balancing, evaluation metrics, and SHAP explainability — all inside an interactive Streamlit UI.
+A Natural Language Processing (NLP) web app that analyzes Amazon product reviews and predicts whether the sentiment is **Positive 😊** or **Negative 😞**.
+The project demonstrates end-to-end NLP pipeline: preprocessing → feature extraction → model training → evaluation → deployment.
 
-🔗 Live App: https://creditcard-fraud-detection-btdadmmkipajtn2aepbzkc.streamlit.app/
+🔗 **Live App:** [https://huggingface.co/spaces/manishadharmik/customer-review-sentiment-analyzer](https://huggingface.co/spaces/manishadharmik/customer-review-sentiment-analyzer)
+📦 **Repository:** [https://github.com/manishadharmik7/amazon-sentiment](https://github.com/manishadharmik7/amazon-sentiment)
 
-📦 Repository: https://github.com/manishadharmik7/creditcard-fraud-detection
+---
 
+## 📖 Overview
 
-🚀 Project Overview
+E-commerce platforms receive millions of customer reviews.
+Manually analyzing sentiment is slow and inefficient—this app automates the process using **TF-IDF + Logistic Regression**, enabling fast and accurate insights.
 
-Credit card fraud detection is challenging due to highly imbalanced data.
-This project uses advanced ML techniques to:
+---
 
-📊 Explore and visualize data
+## 🎯 Objective
 
-⚙️ Perform feature engineering
+* Automatically classify review sentiment
+* Help businesses understand customer opinion at scale
+* Build a lightweight, fast, deployable NLP model
 
-⚖️ Handle imbalance with SMOTE
+---
 
-🤖 Train Random Forest & XGBoost
+## ⚙️ Workflow
 
-📈 Evaluate with PR-AUC, ROC-AUC, MCC
+### **1️⃣ Data Source**
 
-🔍 Explain predictions using SHAP
+* Amazon Product Reviews (FastText format)
+* Labels:
 
-🖥️ Provide an intuitive Streamlit Dashboard
+  * `__label__1` → Positive
+  * `__label__2` → Negative
 
-🗂 Dataset
+### **2️⃣ Data Preprocessing**
 
-Source: Kaggle Credit Card Fraud Detection
+* Lowercasing
+* Removing punctuation & digits
+* Strip extra spaces
+* Tokenization
 
-Samples: 284,807
+### **3️⃣ Feature Engineering**
 
-Fraud cases: 492
+* **TF-IDF Vectorizer**
+* `max_features = 10,000`
 
-Features: PCA features (V1–V28), Time, Amount
+### **4️⃣ Model Building**
 
-Engineered: Hour, Log_Amount
+* **Logistic Regression → ~92% accuracy**
+* **XGBoost → ~90% accuracy**
 
-(Dataset attribution link may be added if needed.)
+### **5️⃣ Deployment**
 
-📁 Folder Structure
-creditcard-fraud-detection/
-│── app.py                         # Streamlit dashboard
-│── README.md
+* Interactive **Streamlit** UI
+* Deployed on **Hugging Face Spaces**
+
+---
+
+## 💻 Tech Stack
+
+* Python
+* Streamlit
+* scikit-learn
+* XGBoost
+* pandas, numpy
+* joblib
+* Hugging Face Spaces
+
+---
+
+## 🧠 How It Works
+
+1. User enters a review
+2. Text is preprocessed
+3. Converted into vectors using **TF-IDF**
+4. Model predicts sentiment
+5. Output displayed instantly:
+
+   * 😊 **Positive**
+   * 😞 **Negative**
+
+---
+
+## 📂 Folder Structure
+
+```
+amazon-sentiment/
+│── app.py                      # Streamlit application
+│── sentiment_lr_model.pkl      # Trained Logistic Regression model
+│── tfidf_vectorizer.pkl        # Saved TF-IDF vectorizer
 │── requirements.txt
-│── data/
-│   └── creditcard.csv
-│── models/
-│   ├── fraud_rfc_model.pkl
-│   └── fraud_xgb_model.pkl
-│── src/
-│   ├── data_preprocess.py
-│   ├── evaluate.py
-│   ├── explain.py
-│   └── train.py
-└── notebook/
-    └── credit_card_fraud_detection_RESUME.ipynb
+│── README.md
+└── data/                       # (optional) dataset for local testing
+```
 
-🔧 Installation
-git clone https://github.com/manishadharmik7/creditcard-fraud-detection
-cd creditcard-fraud-detection
+---
 
-pip install -r requirements.txt
-streamlit run app.py
+## 📊 Results
 
-⭐ Key Features
-📊 Data Preview
+| Model               | Accuracy | Features |
+| ------------------- | -------- | -------- |
+| Logistic Regression | 92%      | TF-IDF   |
+| XGBoost             | 90%      | TF-IDF   |
 
-Dataset summary
+---
 
-Fraud vs. Non-fraud distribution
+## 🏆 Skills Demonstrated
 
-Amount & Time visualizations
+* Natural Language Processing
+* Text Preprocessing
+* TF-IDF Vectorization
+* Logistic Regression & XGBoost
+* Model Evaluation
+* Streamlit App Development
+* Deployment on Hugging Face
 
-🤖 Model Training
-
-Random Forest
-
-XGBoost
-
-Automatic preprocessing pipeline
-
-📈 Evaluation Metrics
-
-Accuracy, Precision, Recall, F1
-
-MCC
-
-PR Curve & ROC Curve
-
-Confusion Matrix
-
-🧠 Explainability
-
-SHAP global feature importance
-
-SHAP summary plots
-
-⚖ Imbalance Handling
-
-Oversampling with SMOTE
-
-📊 Model Performance
-
-| Model        | PR-AUC | ROC-AUC |
-| ------------ | ------ | ------- |
-| XGBoost      | 0.99   | 0.995   |
-| RandomForest | 0.98   | 0.993   |
-
-
-🛠 Future Improvements
-
-Real-time transaction prediction
-
-Hyperparameter tuning (Optuna/GridSearch)
-
-Add LightGBM model
-
-Expand dashboard sections
+---
