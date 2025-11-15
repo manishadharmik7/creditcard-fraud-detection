@@ -7,6 +7,7 @@ This dashboard provides EDA, feature engineering, model training, SMOTE balancin
 
 📦 Repository: https://github.com/manishadharmik7/creditcard-fraud-detection
 
+
 🚀 Project Overview
 
 Credit card fraud detection is challenging due to highly imbalanced data.
@@ -103,9 +104,13 @@ SHAP summary plots
 Oversampling with SMOTE
 
 📊 Model Performance
-Model	PR-AUC	ROC-AUC
-XGBoost	0.99	0.995
-RandomForest	0.98	0.993
+
+| Model        | PR-AUC | ROC-AUC |
+| ------------ | ------ | ------- |
+| XGBoost      | 0.99   | 0.995   |
+| RandomForest | 0.98   | 0.993   |
+
+
 🛠 Future Improvements
 
 Real-time transaction prediction
