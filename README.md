@@ -1,69 +1,64 @@
-# 💳 Credit Card Fraud Detection Dashboard
+💳 Credit Card Fraud Detection Dashboard
 
-An end-to-end machine learning project to detect fraudulent credit card transactions.  
-This dashboard provides **EDA, feature engineering, model training, evaluation, SMOTE, and SHAP explainability** in a clean, interactive Streamlit UI.
+An end-to-end machine learning project to detect fraudulent credit card transactions.
+This dashboard provides EDA, feature engineering, model training, SMOTE balancing, evaluation metrics, and SHAP explainability — all inside an interactive Streamlit UI.
 
-🔗 **Live App:** https://creditcard-fraud-detection-btdadmmkipajtn2aepbzkc.streamlit.app/  
-📦 **Repository:** https://github.com/manishadharmik7/creditcard-fraud-detection  
+🔗 Live App: https://creditcard-fraud-detection-btdadmmkipajtn2aepbzkc.streamlit.app/
 
----
+📦 Repository: https://github.com/manishadharmik7/creditcard-fraud-detection
 
-## 🚀 Project Overview
+🚀 Project Overview
 
-Credit card fraud is highly imbalanced and difficult to detect.  
-This project uses ML techniques to:
+Credit card fraud detection is challenging due to highly imbalanced data.
+This project uses advanced ML techniques to:
 
-- 📊 Explore & visualize data  
-- ⚙️ Perform feature engineering  
-- ⚖ Handle class imbalance with **SMOTE**  
-- 🤖 Train **Random Forest** and **XGBoost**  
-- 📈 Evaluate with PR-AUC, ROC-AUC, MCC  
-- 🔍 Explain predictions using **SHAP**  
-- 🖥 Provide an interactive **Streamlit Dashboard**  
+📊 Explore and visualize data
 
----
+⚙️ Perform feature engineering
 
-## 🗂 Dataset
+⚖️ Handle imbalance with SMOTE
 
-- Source: Kaggle Credit Card Fraud Detection  
-- Samples: **284,807**  
-- Fraud cases: **492** (highly imbalanced)  
-- Features: **30 PCA features (V1–V28), Time, Amount**  
-- Engineered features: **Hour**, **Log_Amount**  
+🤖 Train Random Forest & XGBoost
 
-Dataset link: *(add attribution or remove)*
+📈 Evaluate with PR-AUC, ROC-AUC, MCC
 
----
+🔍 Explain predictions using SHAP
 
-## 📁 Folder Structure
+🖥️ Provide an intuitive Streamlit Dashboard
+
+🗂 Dataset
+
+Source: Kaggle Credit Card Fraud Detection
+
+Samples: 284,807
+
+Fraud cases: 492
+
+Features: PCA features (V1–V28), Time, Amount
+
+Engineered: Hour, Log_Amount
+
+(Dataset attribution link may be added if needed.)
+
+📁 Folder Structure
 creditcard-fraud-detection/
-│
-├── app.py # Streamlit dashboard
-├── README.md
-├── requirements.txt
-│
-├── data/
-│ └── creditcard.csv
-│
-├── models/
-│ ├── fraud_rfc_model.pkl
-│ └── fraud_xgb_model.pkl
-│
-├── src/
-│ ├── data_preprocess.py
-│ ├── evaluate.py
-│ ├── explain.py
-│ └── train.py
-│
+│── app.py                         # Streamlit dashboard
+│── README.md
+│── requirements.txt
+│── data/
+│   └── creditcard.csv
+│── models/
+│   ├── fraud_rfc_model.pkl
+│   └── fraud_xgb_model.pkl
+│── src/
+│   ├── data_preprocess.py
+│   ├── evaluate.py
+│   ├── explain.py
+│   └── train.py
 └── notebook/
-└── credit_card_fraud_detection_RESUME.ipynb
+    └── credit_card_fraud_detection_RESUME.ipynb
 
-
----
-
-## 🔧 Installation
-
-```bash
+🔧 Installation
 git clone https://github.com/manishadharmik7/creditcard-fraud-detection
 cd creditcard-fraud-detection
 
@@ -73,11 +68,11 @@ streamlit run app.py
 ⭐ Key Features
 📊 Data Preview
 
-Dataset info
+Dataset summary
 
-Fraud vs Non-fraud visualization
+Fraud vs. Non-fraud distribution
 
-Distribution plots
+Amount & Time visualizations
 
 🤖 Model Training
 
@@ -93,21 +88,19 @@ Accuracy, Precision, Recall, F1
 
 MCC
 
-PR Curve
-
-ROC Curve
+PR Curve & ROC Curve
 
 Confusion Matrix
 
 🧠 Explainability
 
-SHAP feature importance
+SHAP global feature importance
 
-Interactive summary plots
+SHAP summary plots
 
 ⚖ Imbalance Handling
 
-Oversampling using SMOTE
+Oversampling with SMOTE
 
 📊 Model Performance
 Model	PR-AUC	ROC-AUC
@@ -115,13 +108,10 @@ XGBoost	0.99	0.995
 RandomForest	0.98	0.993
 🛠 Future Improvements
 
-Deploy on Streamlit Cloud (done ✔)
+Real-time transaction prediction
 
-Add real-time transaction testing
-
-Add hyperparameter tuning (Optuna/GridSearch)
+Hyperparameter tuning (Optuna/GridSearch)
 
 Add LightGBM model
 
-
-
+Expand dashboard sections
